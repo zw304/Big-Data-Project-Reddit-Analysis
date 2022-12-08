@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ANLY502-GROUP26-FINALPROJECT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">YouTube & Twitch Analysis for Reddit Data</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/index.html" class="w3-bar-item w3-button w3-theme-l1">Index</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/eda.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">EDA</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/nlp.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">NLP</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/ml.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">ML</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/conclusion.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Conclusion</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>MENU</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#Executive Summary">Executive Summary</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#EDA1">EDA1</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#EDA2">EDA2</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#EDA3">EDA3</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#EDA4">EDA4</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#EDA5">EDA5</a>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+
+ 
+ 
+<!-- EDA -->
+<!-- EDA -->
+<!-- EDA -->
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Exploratory Data Analysis (EDA)</h1>
+      
+      <h2 class="w3-text-teal" id="Executive Summary">Executive Summary</h2>
+      
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-zw1.jpeg" height="440" width="92%">
+       <p align="left">The above line plot shows the number of submission and stock price of Google and Amazon per day between January 1, 2021 to Auguest 31, 2022. We can see that overall the daily activities for both subreddits are declining over the past two years. For most of times YouTube subreddit have more daily submissions then Twitch subreddit, while occasional spikes for YouTube are more significant, usually indicating a service interruption (which will be discussed later). The stock price time plot for the parent company of both platforms are included in the following chunks for reference.And for these companies' stock price, they reached the peak in July 2021 and December 2021, and had a relatively low price in year 2022. There's no obvious relationship between the number of submissions and their stock price. <b><a href= "https://finance.yahoo.com/">External Data Sources</a></b></p>
+       
+      <img src="https://qianleng.georgetown.domains/502cloud/eda1.jpg">
+      <p align="left">There are 163,584 youtube and 97,243 Twitch submissions. The bar plot shows the polulation of submissions in these two different subreddit. It is obvious that youtube had more submission than Twitch from January 1, 2021 to Auguest 21, 2022.</p>
+     
+    
+  </div>
+  
+  
+  
+  
+    <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h2 class="w3-text-teal" id="EDA1">EDA1: Comments Features for Submission in Two Subreddit</h2>
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda4-2.jpeg" height="150" width="92%">
+       
+        <p align="left">Above table shows the detailed number of comments for submissions. Even youtube has more submissions then Twitch, twitch has more comments, indicates that Twitch has higher user engagement. The maximum number of comments for youtube is 11,033, which is close to 10 times to Twitch (1333). The average of number of comments under each submission shows that Twitch has twice average of comments than youtube. This recomfirmed the statement we made earlier: Twitch subreddit has higher user engagement than youtube subreddit. Below is the detailed number of comments for submissions. Below is the detailed stat table of scores for submissions. Variable score was calculated by number of upvoting minus number of downvoting. A surprising phenomenon is that the minimum score are both zero for these two subreddits. </p>
+
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda4-3.jpeg" height="150" width="92%">
+       
+  </div>
+  
+  
+  
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h2 class="w3-text-teal" id="EDA2">EDA2: Most Popular Topics in Two Subreddits</h2>
+      
+       <h3>Most Comments Topics</h3>
+       <p align="left">We have found that for youtube and Twtich, the submissions with the most comments have 11033 and 1333 coments respectively. Now, We are going to study what kind of topic makes such amount of comments. From the above table, it shows that the  most common topic for youtube is "Youtube.com is down right now. Please keep all discussion of the issue to this megathread." This topic has so many comments because the failure problem is concentrated in one submission. And the most comments topic for Twitch is "Over 120GB of Twitch website data has been leaked online (source code, encrypted passwords, streamer payouts, etc.)". This means that Twitch's data leaking was a hot topic of discussion for two years.</p>
+       <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/eda4.png" height="190" width="80%">   
+       
+       <h3>Highest Score Topics</h3>
+       <p align="left"> We also take an interest on what kind of topic received the most "upvote". The highest score topic for youtube is "Youtube.com is down right now. Please keep all discussion of the issue to this megathread." As users use this submission to discuss and solve problems, it causes most people to upvote this submission. The highest score topic for Twitch is "Twitch Discoverability In A Nutshell".</p>
+       <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/eda5.png" height="190" width="80%">   
+    </div>
+    
+
+  </div>
+  
+  
+  
+     <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h2 class="w3-text-teal" id="EDA3">EDA3: Dummy Variable Distributions for Score and Title</h2>
+      <h3>Dummy Score</h3>
+      <p align="left">Below shows the data table and statistics summary for Youtube and Twitch between January 1, 2021 to Auguest 31, 2022.</p> 
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda6-1.jpeg" height="140" width="92%">
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda6-2.jpeg" height="120" width="180"> 
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda6-3.jpeg" height="320" width="85%"> 
+       
+       
+       <h3>Dummy Title</h3>
+      <p align="left">Below shows the data table and statistics summary for Youtube and Twitch between January 1, 2021 to Auguest 31, 2022.</p> 
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda6-1.jpeg" height="140" width="92%">
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda6-2.jpeg" height="120" width="180"> 
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda6-3.jpeg" height="320" width="86%"> 
+         
+         <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda6-4.jpeg" height="120" width="90%"> 
+     <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda6-5.jpeg" height="120" width="180"> 
+      <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda6-6.jpeg" height="250" width="505"> 
+      <p align="left">The first bar plot illustrates 'number_dummy_score' with subreddit as x axis and the total count for the score dummy varibles as y axis. This plot is generated for discoving the quality of post for social media platforms of Twitch and Youtube. From the plot, it is clearly showed that the most of the posts are in line with majority opinions. The second bar plot illustrates 'number_dummy_score' with subreddit as x axis and the total count for the score dummy varibles as y axis. This plot is generated for discoving the quality of post for social media platforms of Twitch and Youtube. From the plot, it is clearly showed that the most of the posts are in line with majority opinions.The pie chart pillustrates the distribution of 'number_title_dummy'. Four different colors stands for varibles of youtube and twitch with title dummy varibles of 0 or 1 where title_dummy = 1 means the title contains a question. This plot gives us insights that the percentage of post in both youtube and twitch are very similar(around 17%) when it is a question format.</p>   
+      
+    </div>
+  </div>
+  
+  
+    
+      <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h2 class="w3-text-teal" id="EDA4">EDA4: Proportion of Topics That Are Not-Safe-For-Work</h2>
+      <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda7-1.jpeg" height="150" width="175">
+       <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/eda2.png" height="250" width="44%">
+       
+        <p align="left">Within these two subreddit, Twitch redditer are less inclined to discuss contents that are Not-Safe-For-Work.It suggests that Twitch might have a relatively healthier comment environment compared with YouTube. While no matter for Twitch or YouTube, both of their Not-Safe-For-Work contents is in a very low rate. Thus both of the platforms do a good job for build a healthy user environment. </p> 
+    </div>
+    
+   <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h2 class="w3-text-teal" id="EDA5">EDA5: Relationship between Length of Title and Mean Score</h2>
+      <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/eda8-1.jpeg" height="300" width="30%">
+       <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/eda3.png" height="380" width="95%">
+       
+        <p align="left">From the plot we can see YouTube subreddit have relatively more consistent score over lenth of post: Longer(or shorter) post does not impact on the average score as much as Twitch subreddit. While Twitch subredditers tends to engage more actively for submissions from 120 to 140 characters, which is a normal length limit for social network platforms. This plot helps explain how does the social media set up their comments limitation characters. At the same time, it shows a function difference between Youtube and Twitch. </p> 
+    </div>
+    </div>
+      
+
+
+
+
+  <footer id="myFooter">
+    <style> 
+    body{text-align:center} 
+    </style>
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4><a href="https://github.com/gu-anly502/fall-2022-reddit-big-data-project-project-group-26" target="_blank">Visit Our GitHub Repo</a></h4>
+      <h4><a href="https://github.com/zw304?tab=repositories" target="_blank">Zehui Wu</a></h4>
+      <h4><a href="https://github.com/herrzilinski?tab=repositories" target="_blank">Deyu Kong</a></h4>
+      <h4><a href="https://github.com/laihanel?tab=repositories" target="_blank">Aihan Liu</a></h4>
+      <h4><a href="https://github.com/PassacagliaJ?tab=repositories" target="_blank">Qian Leng</a></h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

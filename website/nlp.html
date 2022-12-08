@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ANLY502-GROUP26-FINALPROJECT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">YouTube & Twitch Analysis for Reddit Data</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/index.html" class="w3-bar-item w3-button w3-theme-l1">Index</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/eda.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">EDA</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/nlp.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">NLP</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/ml.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">ML</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/conclusion.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Conclusion</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>MENU</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#Business Goals">Business Goals</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#Executive Summary">Executive Summary</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#Analysis Report">Analysis Report</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+
+
+
+
+<!-- NLP -->
+<!-- NLP -->
+<!-- NLP -->
+  <div class="w3-row w3-padding-64" >
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">NLP</h1>
+      
+      <h2 class="w3-text-teal" id="Business Goals">Business Questions Addressed In NLP</h2>
+      <h3 align="left">1. What’s the Time series patterns of submissions number?</h3>
+      <p align="left">Visualize time series patterns for Twitch comments and Youtube comments.</p>
+
+      <h3 align="left">2. Sentiments analysis for Youtube and Twitch Reddits.</h3>
+      <p align="left">Analyze redditers’ sentiments score and make comparison between these two video based platforms.</p>
+
+      <h3 align="left">3. Provide a list of technical problems, what is the frequency that users have on these technical problems of each platform? / Any suggestions for twitch and youtube to improve based on users’ post?</h3>
+      <p align="left">The goal of this business question is to help twitch and youtube discover the most frequent problems that users meet, and help them to improve the user experience. The programming language used for this question would be Python and Spark.</p>
+      
+      <h2 class="w3-text-teal" id="Executive Summary">Executive Summary</h2>
+      <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/nlp1.png" height="400" width="60%">
+      <p align="left">This report aims to study the statistical and semantic properties of Youtube and Twitch subreddit in Pushshifr Reddit dataset, to answer several proposed analytical questions. By comparing the daily number of submission activities with the stock prices of respective parent companies of the two platforms, the research team concludes that spikes in submission activities may be linked to daily closing price of parent companies, yet the overall correltaion is not significant. The research team used stop words removal, stemming/lemmatizing, and normalization pipelines from John Snow LABS to engineer the dataset foo further analysis. Word/token importance is established by using word count and TFIDF method. Word counts shows users on both subreddit tends to mention technical keywords to promote specific channel or account. TFIDF reveals slightly more insight, as Youtube subredditers' word choices are more adult-orientated, while Twitch users focus more on contents and types of streaming. Several keywords related to technical difficulties and user experience were studied. It shows that advertisment and sponsorship related issues were complained the most in both platforms, while Youtube subredditers suffered significantly more. The pattern shows the "Freemium" monetization scheme is gravely impacting viewers' experience.</p>
+      
+      <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/nlp2.png" height="400" width="60%">
+      <p align="left">Vivekn pre-trained model was used to infer user sentiment. Twitch and YouTube comments’ score distribution were respectively visualized under three situations: “score below zero”, “score equal to zero” and score over zero”. It’s easy to find that no matter for Twitch or YouTube comments, most of their score is over zero, than equal to zero or below zero. Which means that when giving votes to posts, people are more likely to have a mutual agreement either on negatively or positively. It shows that people in YouTube and twitch have their preferences on topics and posts. When the comments’ are deemed positive, their scores are more likely to be above zero(received more upvotes than downvotes) on average, and vise versa. This suggests both Twitch and YouTube subreddit have maintained a relatively healthy and constructive environments for interaction, a job well done by the communities and moderators. Sentiment analysis about the submission content also provides an insight that the users tend to have a more negative opinion and would get a more passive agreement on posts in Youtube. For Twitch, users’ experience and attitude towards the posts are more gentle. Suggestions can be given to the Youtube that operators should put more emphasis on users’ experience.</p>
+      
+       <h2 class="w3-text-teal" id="Analysis Report">Analysis Report</h2> 
+      <h3>User Activities And Parent Company Stock Price Comparison</h3> 
+      <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-zw1.jpeg" height="380" width="92%">
+       
+        <p align="left">After coverting the 'created_utc' column to datetime, the team plotted the number of submissions for each subreddit per day. It can seen that the daily activities for both subreddits are declining over the past two years. For most of times YouTube subreddit have more daily submissions than Twitch subreddit, while occasional spikes for YouTube are more significant, usually indicating a service interruption (which will be discussed later). The stock price time plot for the parent company of both platforms are overlayed for reference. It shows that the overall trend of the submission activities in these two subreddits does not reflect the stock price of the two companies, certain “pikes” in the capital market does correlates with more discussions on reddit.</p> 
+        
+          <h3> Words of Importance </h3>
+   <p align="left">The team studied the importance of words using word count and TFIDF for both subreddits’ submission. Below three figures shows the most commmon words for submissions and comments. For the most common words apart from the two subreddit names themselves, Youtube subreddit have “video”, “channel”, “comment” take the top 3, while Twitch subreddit have “stream”, “streamer”, “chat” on the top hits. For authors comments, "post", "question" and "channel" are the top 3 topics for youtube subreddit, and for Twitch subreddit, "stream" and "rule" are mentioned mostly. This is clearly determined by the self-promotion efforts on both platforms, when the uploader/streamer asks viewers to interact and respond to their content to boost popularity.</p>  
+  <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-zw2.jpeg" height="350" width="78%">
+  <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-zw3.jpeg" height="350" width="78%">
+  <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-zw4.jpeg" height="350" width="70%">
+   <p align="left">From plots below it could be inferred that YouTube subreddit have relatively more consistent score over length of post: Longer(or shorter) posts do not impact on the average score as much as Twitch subreddit. While Twitch sub-redditers tend to engage more actively for submissions from 120 to 140 characters, which is a normal length limit for social network platforms.</p> 
+    <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-zw5.jpeg" height="380" width="68%">
+    <p align="left">By extracting TFIDF score from Sparknlp’s pipeline, the research team has a better understanding to words used in submission titles. The F-word rules supreme in the Youtube subreddit. Adult contents are more prevalent in this subreddit compared to Twitch. Keywords include "share", "youd", "meditation", "beat" clearly shows user preference and attention. There is no surprise that the F-word rules supreme in the Youtube subreddit. Adult contents and offensive language are more prevalent in this subreddit. Twitch subreddit users clearly pays more attention to technical contents and interaction with other users. Several trending twitch channel made it in the top of this list. BM25 metric used by Elastic Search could do better job compared to TFIDF. This metric could be calculated for each token and compare results with TFIDF in the future.</p> 
+    <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-zw6.jpeg" height="380" width="85%">
+    <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-zw7.jpeg" height="350" width="65%"> 
+    <h3>Technical Problems of Each Platform</h3>
+    <p align="left">The research team attempts to identify key areas where redditers complain the most in respective subreddits. The keywords searching can broadly classify common complaint into the following five categories: advertising or promotions, audio or sound related issues, image/video quality, connection speed, interface crash or corruption, and privacy issues by cookie collection. Ads related post by far leads other technical complaints by a significant margin, for both platforms. This is obviously dictated by the “Fremium” business pattern adopted by both companies. Youtube subredditers mention ads far more than Twitch suggest Youtube’s monetization channel is overly reliant on advertisement and sponsorship, to the extent that viewing experience for free users is greatly impacted. Next in line, audio quality and connection speed caught the attention of both platform users. It is worth noting that apart from ads and cookie related issues, Twitch redditers mention more of these keywords in almost every aspect. While this could be explained by higher users engagement and interaction for this subreddit, the management and technical team of Twitch should pay attention to their user experience regardless.</p>
+    <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-zw8.jpeg" height="380" width="75%"> 
+    </div>
+  
+
+  
+    <div class="w3-row"> 
+    <div class="w3-twothird w3-container"> 
+      <h3>Sentiment Analysis</h3> 
+      <h4 align="left">1. Sentiment Analysis on "Submissions" Data</h4>  
+        <p align="left">To provide business insight of users’ opinion for both Youtube and Twitch Reddits, this analysis process split the user into proportions toward topics and comments that were posted and replied. For example, to discover the relationship between the title of a post and the post contents in these two platforms, the following four plots are provided. The bar plots in pink are built based on if the title is posted as a question format while the blue bar plots focus on if the post gets a general agreement.</p> 
+        <p align="left">To solve the business goal of what’s the relationship between users’ opinion and the post content, the following tables and plots are given after using the NLP model. The Score_dummy_final_sentiment_submissions is 0 when the number of upvotes and downvotes is the same. The upper table is for youtube and the lower one is for Twitch. Comparing these two plots, the numbers show that for both platforms, the content of posts that achieve a majority group of users’ agreement or disagreement is around 5 times higher than fair posts in youtube and 2 times higher than the one in Twitch. Also, among these posts, the number of users who have a negative opinion 1.08 higher than positive opinion users. However, users’ opinions on the Twitch platform are more balanced. This provides an insight that the users tend to have a more negative opinion and would get a more passive agreement on posts in Youtube. Though the volume of users for youtube and twitch is not the same, the following bar plots still show patterns about the agreement distributions. Combining with the table that shown above, suggestions can be given to the Youtube operators to put more emphasis on users’ experience. Based on the most common words generated by the NLP model, the operators can make decisions with more specific instructions. To achieve this goal better, a future NLP analysis would be given about the most frequent or popular words and topics that users interested in.</p> 
+
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-sentiment1.png" height="150" width="92%">
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-sentiment2.jpeg" height="450" width="46%">
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-sentiment3.jpeg" height="450" width="46%">
+        <p align="left">The following tables and histograms are generated to discover the distribution of users’ attitude based on different title formats. The upper table is for youtube and the lower one is for twitch. They clearly show that for both youtube and twitch, the total distribution of titles without a question mark is higher than the one which follows a question format. For youtube, the users have more negative and passive opinions regardless if the title is posted as a question format. However, for Twitch, with the dummy variable of title equals to 1, users then have a more positive opinion which would bring the platform with a better impression. This also shows that the general opinion and sentiment of users in twitch is better than youtube.</p> 
+        <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-sentiment4.jpeg" height="150" width="92%">
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-sentiment5.jpeg" height="450" width="46%">
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-sentiment6.jpeg" height="450" width="46%">
+       <h4  align="left">2. Sentiment Analysis on "Comments" Dataset</h4>  
+       <p align="left"> To better understand the comments data from Twitch and YouTube, Vivekn pre-training Model was used again in the “comments_nano” dataset. Considering the bar plot in the "Executive Summary" revealed data asymmetrical, pie plots were used here to help dive deeper on more specific distributions in each site under each situation. After overall analysis, when the comments’ score below zero(received more downvote than upvote), sentiment analysis results are more likely to be negative; And on the contrary, when the comments’ score over zero(received more upvote than downvote), the sentiments analysis results are more likely to be positive. This result caters to the normal expectations. </p>  
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-sentiment9-1-1.jpeg" height="225" width="46%"> 
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-sentiment9-1-2.jpeg" height="225" width="46%">
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-sentiment7-T.jpeg" height="225" width="46%"> 
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-sentiment7-Y.jpeg" height="225" width="46%"> 
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-sentiment8-T.jpeg" height="225" width="46%">
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-sentiment8-Y.jpeg" height="225" width="46%">
+       
+
+      
+      
+      
+    </div>
+    
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+    
+  </div>
+
+
+
+
+
+
+
+   <footer id="myFooter">
+    <style> 
+    body{text-align:center} 
+    </style>
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4><a href="https://github.com/gu-anly502/fall-2022-reddit-big-data-project-project-group-26" target="_blank">Visit Our GitHub Repo</a></h4>
+      <h4><a href="https://github.com/zw304?tab=repositories" target="_blank">Zehui Wu</a></h4>
+      <h4><a href="https://github.com/herrzilinski?tab=repositories" target="_blank">Deyu Kong</a></h4>
+      <h4><a href="https://github.com/laihanel?tab=repositories" target="_blank">Aihan Liu</a></h4>
+      <h4><a href="https://github.com/PassacagliaJ?tab=repositories" target="_blank">Qian Leng</a></h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

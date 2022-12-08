@@ -1,0 +1,190 @@
+<html lang="en"><head>
+<title>ANLY502-GROUP26-FINALPROJECT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">YouTube &amp; Twitch Analysis for Reddit Data</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/index.html" class="w3-bar-item w3-button w3-theme-l1">Index</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/eda.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">EDA</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/nlp.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">NLP</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/ml.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">ML</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/conclusion.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Conclusion</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>MENU</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#Introduction">Introduction</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#10 Questions">10 Business Questions</a>
+
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+
+
+<!-- Introduction + 10 Questions -->
+<!-- Introduction + 10 Questions -->
+<!-- Introduction + 10 Questions -->
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal" id="Introduction">Introduction</h1>
+      <p align="left">YouTube and Twitch: The online video heavyweight battle of the century. While there are many similarities between Twitch and YouTube - for example, they are both audio/video sharing platforms - there are also many differences between the two platforms.</p>
+      <p align="left">The most significant difference between Twitch and YouTube is the viewer's interest. Twitch caters to live-stream hosts and is the largest live-streaming platform in the world. On the other hand, YouTube uses an excellent search engine to help those interested in a specific topic find videos that match their heart's expectations. </p>
+      <p align="left">While the two video sites have different focuses, they also have similar modules. YouTube, for example, has a live streaming system, while Twitch is also drawing on more different categories of video submissions.</p>
+     
+      <p align="left">This study examines the difference in users' focus using these two video platforms by comparing two different subreddits on Reddit, 'youtube' and 'Twitch'. The dataset for this notebook is described in <b><a href="https://arxiv.org/pdf/2001.08435.pdf">The Pushshift Reddit Dataset paper</a></b>. The plots attract the team’s interest in discovering deeper about the topics, comments, and users’ attitudes for the media platform of youtube and use twitch as a comparison. </p>
+       <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY502/plot/11101670474185_.pic.jpg" height="215" width="750">
+      <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/i1.png" height="200" width="780">
+      <p align="left">The following three sections represent the procedure of this study to address the 10 business questions lists below: </p>
+      <p align="left">EDA: stands for Exploratory Data Analysis, which mainly includes the overview and summary of the dataset. </p>
+      <p align="left">NLP: stands for Natural Language Processing, using linguistics and computer science to understand the texts of submission and comments posted on subreddits. </p>
+      <p align="left">ML: stands for Machine Learning, generating models to solve classification and prediction problems.</p>
+    </div>
+  </div>
+  
+ 
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal" id="10 Questions">10 Business Questions</h1>
+      
+      <h3 align="left">1. What is the total performance of users’ comments on Twitch and Youtube in recent 2 years?</h3>
+      <p align="left">Business Goal:</p>
+      <p align="left">Python and Spark would be the primary programming languages used to compare the total comments analysis between Twitch and Youtube users. By doing this, readers can therefore get an overview of the total users activities between these two social media platforms from 2021/01/01 to 2022/08/31.</p>
+      <p align="left">Technical Proposal：</p>
+      <p align="left">Technically, packages of seaborn and matplotlib would be adapted to vividly show visualizations. The new datasets of ‘submissions_twitch’, ‘submissions_youtube’ are generated based on 15 variables such as ‘author_id’, ‘title’, and so on. Two bar plots would therefore be generated with the columns of ‘num_comments’ in these two new datasets.</p>
+      
+      <h3 align="left">2. What’s the relationship between length of comments and “score”(upvote-downvote)?</h3>
+      <p align="left">Business Goal:</p>
+      <p align="left">Determine if long comments could represent high quality comments somehow.</p>
+      <p align="left">Technical Proposal：</p>
+      <p align="left">UCreate a new column called “body_length”, which saves numeric data representing the length of comments. Create a scatter plot that compares the body_length and score. (Here we define that a high quality comment doesn't have to be right or receive a positive score, instead as long as it could activate people to give responses and even write down sub-comments. Thus a very low negative score also can be considered a high quality comments. )</p>
+      
+      <h3 align="left">3. What’s the hottest topics/words in Youtube and Twitch Reddits? </h3>
+      <p align="left">Business Goal:</p>
+      <p align="left">To define the most popular topics or most commonly mentioned words for Youtube and Twitch lovers. Dive deeper into user hobbies in social media.</p>
+      <p align="left">Technical Proposal：</p>
+      <p align="left">Select the “body” column in “comments_youtube” and “comments_twitch” table, use “Wordcloud”, “matplotlib”, “pandas'' to generate word clouds and word frequency lists for Youtube and Twitch comments. Implement key words analysis. Compare their word clouds viz and frequency lists, and find their differences and similarities.</p>
+      
+      <h3 align="left">4. What are the top 10 qualified topics that users agree most for both Youtube and Twitch?</h3>
+      <p align="left">Business Goal:</p>
+      <p align="left">The goal is to discover the topic for youtube and twitch which receive the top 10 of reviewing scores correspondingly. This would reflect the users’ acceptance level for each topic. Python and Spark would be the primary programming languages used for this business goal.</p>
+      <p align="left">Technical Proposal：</p>
+      <p align="left">The column of ‘score’ from the submissions_youtube and submissions_twitch would be used. Since the score column is created by subtracting the downvotes from upvotes, the scores would be balanced to 0 if the topic is too controversial or not influential at all. The quantitative analysis would be conducted to filter topics with the top 10 highest reviewing scores.</p>
+      
+     <h3 align="left">5. What’s the Time series patterns of comment numbers? What’s the relationship between number of comments and their parent companies stock price?</h3>
+      <p align="left">Business Goal:</p>
+      <p align="left">To define time series patterns for Twitch comments and Youtube comments.</p>
+      <p align="left">Technical Proposal：</p>
+      <p align="left">Use “matplotlib” and “seaborn” to graph line plots based on date and ‘num_comments’, and combine the Twitch plots with Youtube plots. Find whether there are the same patterns between Twitch comments and Youtube comments. Then analyze the user activity behavior. And try to track the influence of those big news (some may match with the summits in plots) </p>
+      
+      <h3 align="left">6. Model the number of submissions of two subreddits using ARIMA. What do the models tell us about the time-series structure of submission activities? And how can we use this information? </h3>
+      <p align="left">Business Goal:</p>
+      <p align="left">Determine the order of ARIMA and fit the data. Analyze the coefficients and performance metrics from these models and give recommendations to Reddit’s moderators on users’ submission activity.</p>
+      <p align="left">Technical Proposal：</p>
+      <p align="left">Employ ACF/PACF plots and GPAC table to determine the order of ARIMA model. Fit the models with “statsmodel” package and examine the coefficient, confidence interval and BIC.</p>
+      
+      <h3 align="left">7. What are the similarities and differences of the topic that is detected over 18 or below 18 on twitch and youtube? </h3>
+      <p align="left">Business Goal:</p>
+      <p align="left">The goal is to discover the insights of the functions of platforms that users care about based on whether the comment is over 18 or not. The programming languages would be Spark and Python.</p>
+      <p align="left">Technical Proposal：</p>
+      <p align="left">Based on the business goal of getting the most popular topic based on users’ ages. The NLP tool of Text Classification analysis can be conducted. For plotting, the table of ‘submissions_twitch’ and ‘‘submissions_youtube’ and column of ‘over_18’ would be used; the machine learning methods of decision trees might also be used to classify the content that a specific topic has the most.</p>
+      
+      <h3 align="left">8. Provide a list of technical problems, what is the frequency that users have on these technical problems of each platform? / Any suggestions for twitch and youtube to improve based on users’ posts?</h3>
+      <p align="left">Business Goal:</p>
+      <p align="left">The goal of this business question is to help twitch and youtube discover the most frequent problems that users meet, and help them to improve the user experience. The programming language used for this question would be Python and Spark.</p>
+      <p align="left">Technical Proposal：</p>
+      <p align="left">In order to filter the topics, a list of technical problems such as ‘appcrash’ and ‘server collapse’ needs to be collected first. TFIDF would be used to deal with the text data. After cleaning the dataset, the NLP method of Keyword Extraction can be conducted to extract the topic word and fit the problems to posts. </p>
+      
+      <h3 align="left">9. Sentiments analysis for Youtube and Twitch Reddits? </h3>
+      <p align="left">Business Goal:</p>
+      <p align="left">Analyze redditors' sentiment score and make comparison between these two video based platforms.</p>
+      <p align="left">Technical Proposal：</p>
+      <p align="left">Apply the “spark-nlp” package in the “body” column to perform data tokenization, lementization, and stopword removal. Pretrained models will be used to inference text sentiment. Comparisons based on sentiment and interactive features including scores and number of comments will be drawn.</p>
+      
+      <h3 align="left">10. Discover a classification strategy to increase the efficiency of managing the comments of Youtube and Twitch users.</h3>
+      <p align="left">Business Goal:</p>
+      <p align="left">The goal is to improve the overall quality of the subreddit platform, and improve the efficiency for administrators when dealing with posts with a better classification of  improper comments or comments that are against the rules. The programming languages used would be Python and Spark.</p>
+      <p align="left">Technical Proposal：</p>
+      <p align="left">The table of ‘submissions_twitch’ and ‘submissions_youtube’ would be used. And the columns of ‘title’, and ‘selftext’ can be used. Since titles are all text data, the method of vectorization should be applied first. Then, the training and testing dataset would be splitted for doing the predictive models. For machine learning analysis, 5 levels of users’ attitude would be splitted from ‘neither agree nor disagree’ to ‘strongly disagree’.</p>
+    </div>
+  </div>
+  
+ 
+
+
+
+
+
+  <footer id="myFooter">
+    <style> 
+    body{text-align:center} 
+    </style>
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4><a href="https://github.com/gu-anly502/fall-2022-reddit-big-data-project-project-group-26" target="_blank">Visit Our GitHub Repo</a></h4>
+      <h4><a href="https://github.com/zw304?tab=repositories" target="_blank">Zehui Wu</a></h4>
+      <h4><a href="https://github.com/herrzilinski?tab=repositories" target="_blank">Deyu Kong</a></h4>
+      <h4><a href="https://github.com/laihanel?tab=repositories" target="_blank">Aihan Liu</a></h4>
+      <h4><a href="https://github.com/PassacagliaJ?tab=repositories" target="_blank">Qian Leng</a></h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+
+
+</body></html>

@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ANLY502-GROUP26-FINALPROJECT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">YouTube & Twitch Analysis for Reddit Data</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/index.html" class="w3-bar-item w3-button w3-theme-l1">Index</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/eda.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">EDA</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/nlp.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">NLP</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/ml.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">ML</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/conclusion.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Conclusion</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>MENU</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#Conclusion">Conclusion</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#Future Steps">Future Steps</a>
+
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+
+
+<!-- Conclusion -->
+<!-- Conclusion -->
+<!-- Conclusion -->
+  <div class="w3-row w3-padding-64" >
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal" id="Conclusion">Conclusion</h1>
+      
+     <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/c1.jpg" >  
+      <p align="left">From the exploratory data analysis, the team has concluded the data with their volume of submissions and comments, hot topics and high score topics. Firstly, there is a slight difference in topic activity of youtube and Twitch due to the difference in the number of customers. Compared with Twitch, youtube has more submissions but less comments from January 1, 2021 to August 21, 2022. For both platforms, the users’ support of the specific submission does not depend on the length of the test written by the author. In order to find the factors related to the users support, the team developed more analysis for the most popular topic and highest score topics. The most comments and highest score topic for youtube are both "Youtube.com is down right now. Please keep all discussion of the issue to this megathread.", followed by “#BringBackDislikes”.  This is because of the fact that the administrators of youtube subreddit have grouped all submitted issues in this topic, which makes it easier to manage, and for users to locate their issues and find a solution easily. The topic #BringBackDislikes has a high level of attention, which is a discussion board for discussing whether ‘dislikes’ button should be removed or not on youtube. </p>
+      
+       <p align="left">The Twitch subreddit is different. The most commented topic for Twitch is "Over 120GB of Twitch website data has been leaked online (source code, encrypted passwords, streamer payouts, etc.)". This means that Twitch's data leaking was a hot topic of discussion for the past two years. Whereas the top highest score topics vary, including the introduction of streamers, idea sharing and problem solving. The team has researched the most common word appearance in these two subreddit too. More details are in the NLP section.</p>
+      <p align="left">The research team found little evidence suggesting a strong correlation between submission activities and stock prices of parent companies. However, we did find certain “pikes” in the capital market were indeed reflected with more discussions on reddit. After fitting ARIMA model to the two subreddits’ hourly submission time series, the team discovered that the temporal pattern embedded in the submission activities are simple Moving Averages: a random shock event(novel content that draws discussion/ unexpected service interruption that spikes user complaint) will have its effect carried over to the next. Using this information, moderators could be better staffed to regulate submission traffic, and they know what to expect during an event of random shock.</p>
+      <img class="center-fig" src="https://zehuiwu.georgetown.domains/ANLY590/eda_plot/nlp-zw1.jpeg" height="380" width="92%">
+      
+      <p align="left">To discover more about the content of the comments. This project found that the proportion of topics that are Not-Safe-for-Work is higher for youtube users than twitch users. The popular technical problems such as ‘ads’,’audio’,’speed’,’crash’, and ‘cookies’ for each platform are researched to provide suggestions for twitch and youtube to upgrade. As the plot shown below, it’s clear to get the idea that the advertisements are the top technical problems that annoy users while youtube has the lowest technical problem of quality and twitch has the lowest number of cookies issues. Both of the platforms do a great job on preventing the ‘crash’ problem. Based on these findings, business suggestions can be given to media platforms to increase the users’ stratification and customer retention rate by controlling the time and amount of total advertisements. For youtube and twitch, the IT department can also focus more on speed, audio, and video quality issues to prevent the increasing of the users’ bounce rate. Based on these, the IT department of the media platform can then have a clear direction of issues to work on, and an increase of the overall users’ experience. </p>
+      <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/nlp1.png" height="400" width="60%">
+      <p align="left">The final analysis is conducted for discovering the relationship between comments and users’ opinions who use youtube and twitch. For users of both platforms,  they tend to have a positive attitude when the posts and comments get a general agreement while having a negative opinion in words when the posts tend to be arguable. Compared to twitch, youtube users tend to have a more passive opinion on posts. To provide more business insights based on these findings, a new target users strategy is established for reddit administrators to increase the efficiency of managing and classifying comments. By building machine learning models of classification analysis, 5 levels of the relationship between comments and users’ opinions are discovered from ‘strongly disagree’ to ‘strongly agree’. Among these, it shows that around 60% of youtube and twitch users tend to have a ‘neither agree nor disagree’ attitude and less than 10% of users have a ‘strongly disagree’ attitude towards a topic. Based on the findings, the reddit platform administrators then could have a clear overview that users prefer to have a gentle and neutral attitude of both youtube and twitch. </p>
+      <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml2.png" height="400" width="60%">
+      
+      
+      <h1 class="w3-text-teal" id="Future Steps">Future Steps</h1>
+      <p align="left">For future utilization, the ranking of attitudes can also be helpful for reddit administrators to apply popular topics to discover users’ attitude toward specific topics and prevent the loss of reddit web traffic visitor flows. Topic modelling using zero-shot classification would also enrich the research, by giving us a more profound understanding of topics of interest. Aggregating each topic by the number of related submissions over a specified period of time could give us the trend of topic “hotness”. It could give us more insights over how a topic comes trendy and how it lost public attention.</p>
+      
+      
+      
+      
+      
+      
+    </div>
+  </div>
+  
+ 
+  
+    </div>
+
+  
+ 
+
+
+
+
+
+ <footer id="myFooter">
+    <style> 
+    body{text-align:center} 
+    </style>
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4><a href="https://github.com/gu-anly502/fall-2022-reddit-big-data-project-project-group-26" target="_blank">Visit Our GitHub Repo</a></h4>
+      <h4><a href="https://github.com/zw304?tab=repositories" target="_blank">Zehui Wu</a></h4>
+      <h4><a href="https://github.com/herrzilinski?tab=repositories" target="_blank">Deyu Kong</a></h4>
+      <h4><a href="https://github.com/laihanel?tab=repositories" target="_blank">Aihan Liu</a></h4>
+      <h4><a href="https://github.com/PassacagliaJ?tab=repositories" target="_blank">Qian Leng</a></h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

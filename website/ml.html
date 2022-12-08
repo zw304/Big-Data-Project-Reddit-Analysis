@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ANLY502-GROUP26-FINALPROJECT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">YouTube & Twitch Analysis for Reddit Data</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/index.html" class="w3-bar-item w3-button w3-theme-l1">Index</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/eda.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">EDA</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/nlp.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">NLP</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/ml.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">ML</a>
+    <a href="https://qianleng.georgetown.domains/502cloud/conclusion.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Conclusion</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>MENU</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#Business Goals">Business Goals</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#Executive Summary">Executive Summary</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#Analysis Report">Analysis Report</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+
+
+<!-- ML -->
+<!-- ML -->
+<!-- ML -->
+ <div class="w3-row w3-padding-64" >
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">ML</h1>
+      
+      <h2 class="w3-text-teal" id="Business Goals">Business Questions Addressed In ML</h2>
+      <h3 align="left">1. What’s the users’ quality of those who use YouTube and Twitch platform?</h3>
+      <p align="left">To have a batter understanding and comparison between YouTube users and Twitch users. </p>
+
+      <h3 align="left">2. What is the prediction of comments volume for reddit administrators?</h3>
+      <p align="left">In order to help reddit administrators upgrade websites and fix bugs by analyzing redditers’ comments volume </p>
+
+      
+      <h2 class="w3-text-teal" id="Executive Summary">Executive Summary</h2>
+      
+      <p align="left">The Machine Learning parts include four different models in total which mainly deliver the business insights of the users’ quality who use youtube and twitch platform and the predictions of comments volume for reddit administrators to better enforce and manage the reddit platform. More detailedly, the images below shows the overall users comments amount and proportion for twitch and youtube. From ‘neither agree nor disagree’ to ‘strongly disagree’, there are 5 levels of users’ attitude in total. It’s clear to see that, the overall twitch comments number is higher than the youtube for each level. The result also shows that the users of both platforms tend to have a ‘neither agree nor disagree’(~60%) and ‘somewhat agree’ (~30%). This shows that users’ attitude topics are mostly gentle, neutral and not very extreme. Moreover, compared to the negative attitude of ‘disagree’, users tend to give more ‘positive’ comments of ‘agree’. This shows that the users are not very aggressive for both youtube and twitch. </p>
+      <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml2.png" height="400" width="60%">
+      <p align="left">The team employed a wide array of tools to model the time-series structure of both subreddits’ hourly submission activities. After comparing different sets of ARIMA parameters, ARIMA(0,1,1) and ARIMA(1,1,1) were deemed sufficient to describe Twitch and Youtube subreddit respectively. By modeling the submission activities, moderators could be better staffed to regulate submission traffic, and they know what to expect during an event of random shock.</p>
+      
+      
+      
+      
+      
+      
+       <h2 class="w3-text-teal" id="Analysis Report">Analysis Report</h2> 
+      <h3>Classification Analysis</h3> 
+      
+       
+        <p align="left">The score in the comment has been divided into five different levels: Strongly agree (score is greater than 7), Somewhat agree (score is between 2 to 7), neither agree nor disagree (score is between -1 to 1), somewhat disagree (score is between -7 to -2) and strongly disagree (score is smaller than -7). Since the comments population differs from youtube and Twitch, the graph above shows the proportion for each group in different subreddit. The majority remains indifferent (neither agree nor disagree). Those who really care are more inclined to give upvotes. Youtube users tend to have a consensus for solid agreements.</p> 
+        <p align="left">There are some ETL processes for the data: Since the training data is the body of comments, text data needs to be vectorized before modeling. The team applied StringIndexer for the target variable which changes different levels into numerical values. After tokenization and removing stopwords, CountVectorizer were applied for the tokenized results.The data is imbalanced, and the team applied the weight to RandomForestClassifier. PySpark needs to have a weight assigned to each instance (i.e., row) in the training set. The team created a mapping to apply a weight to each training instance, and models were implemented by applying ML pipeline.</p>
+        
+        <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml3.jpg" >
+        <p align="left">To more accurately analyze the business question of predicting the score group by users’ comments, four models are used in total. Ranking by accuracy from high to low, the models are: Logistic Regression, Random Forest, Random Forest2, and Decision Tree. As the table shown above, the performance of logistic regression is very good which can help the reddit platform administrator better classified improper comments or comments that are against the rules. This would increase the efficiency of platform management. The hyperparameters of the number of trees are changed for random forest models to get a better performance. However, the performance result is not that ideal which only predicts around 30% of the users’ opinions. For Decision Tree, the performance is the lowest which makes sense since one decision tree obtains more bias than random forest in concept. In conclusion, based on the four models the team generated and compared, the multi-classification can be better done with logistic regression and business insights of future comment quality, users attitude on Youtube and Twitch can be better understood and forecasted by using the regression model. </p> 
+        
+          <h3> Time Series Anlysis </h3>
+    
+  <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml4.png" height="400" width="80%">
+  <p align="left">The research team focused on the time-series analysis of the hourly submission activities of the two subreddits and model by SARIMA. A custom toolbox module with several helper functions is called in to facilitate the analysis. After performing Augmented Dickey-Fuller test and KPSS test, both time series could be considered to be stationary. But after plotting their ACF/PACF, the time series are underdifferenced. So first order differencing is performed on both series.</p> 
+  
+  <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml5.jpg" height="180" width="60%">
+  <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml6.jpg" height="180" width="57%">
+
+  
+  <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml7.jpg" height="220" width="75%">
+
+  <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml8.jpg" height="220" width="75%">
+  
+ 
+  
+  
+  <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml9.png" height="400" width="75%">
+  <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml10.png" height="400" width="75%">
+  
+  <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml11.png" height="350" width="50%">
+  <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml12.png" height="350" width="50%">
+  <p align="left">To identify the order of AR and MA structure lies within, the team employed a Generalized Partial AutoCorrelation table to visualize the potential pattern. Taking both GPAC and ACF/PACF plot into account, the similarity between the two time series could be seen as they bear potentially the same structure. The tentative models for Youtube or Twitch subreddit’s submission activity will be ARIMA(0,1,1) or ARIMA(1,1,1) and the team will test them separately. From the model summary, it could be concluded that adding AR arguments makes meaningful contributions to the model compared to ARIMA(0,1,1) for Youtube subreddit. The BIC metrics improve while the coefficient of AR is significant. Adding further AR argument has diminishing return, as the coefficient falls closely to 0.For Twitch subreddit, ARIMA(0,1,1) is sufficient. Adding AR elements does not improve the model. The coefficient of additional AR argument is close to zero even though its p-value is significant.</p> 
+  <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml13.png" height="350" width="50%">
+  <img class="center-fig" src="https://qianleng.georgetown.domains/502cloud/ml/ml14.png" height="350" width="50%">
+  <p align="left">What does the model tell us about the structure of these time series? First of all, it suggests the temporal pattern embedded in the submission activities are simple Moving Averages: a random shock event(novel content that draws discussion/ unexpected service interruption that spikes user complaint) will have its effect carried over to the next. There are some weak auto-regressive correlations within the series as well, but are not the most influential factor. By modeling the submission activities, moderators could be better staffed to regulate submission traffic, and they know what to expect during an event of random shock. For example, by doing this the administrators can prevent the problem of system collapse when popular events bring extraordinary traffic volumes to reddit. Moreover, based on the prediction of the time series model, the reddit administrators can better determine the specific period of time to do website maintenance. By doing this, the forecasting model can help to save as much web traffic stream as possible.
+</p>
+  
+    </div>
+    
+  </div>
+
+
+
+ 
+
+
+
+   <footer id="myFooter">
+    <style> 
+    body{text-align:center} 
+    </style>
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4><a href="https://github.com/gu-anly502/fall-2022-reddit-big-data-project-project-group-26" target="_blank">Visit Our GitHub Repo</a></h4>
+      <h4><a href="https://github.com/zw304?tab=repositories" target="_blank">Zehui Wu</a></h4>
+      <h4><a href="https://github.com/herrzilinski?tab=repositories" target="_blank">Deyu Kong</a></h4>
+      <h4><a href="https://github.com/laihanel?tab=repositories" target="_blank">Aihan Liu</a></h4>
+      <h4><a href="https://github.com/PassacagliaJ?tab=repositories" target="_blank">Qian Leng</a></h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
